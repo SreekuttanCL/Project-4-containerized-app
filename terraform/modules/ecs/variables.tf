@@ -29,3 +29,8 @@ variable "ecs_task_role_arn" {
 variable "ecr_repository_url" {
   type = string
 }
+
+variable "alb_security_group_id" {
+  type = string
+}
+

@@ -2,6 +2,16 @@ resource "aws_ecs_cluster" "this" {
   name = "${var.project_name}-${var.environment}-cluster"
 }
 
+resource "aws_cloudwatch_log_group" "ecs" {
+  name              = "/ecs/${var.project_name}"
+  retention_in_days = 14
+  tags = {
+    Environment = var.environment
+    Project     = var.project_name
+  }
+}
+
+
 resource "aws_ecs_task_definition" "this" {
   family                   = "${var.project_name}-${var.environment}"
   requires_compatibilities = ["FARGATE"]
@@ -29,7 +39,7 @@ resource "aws_ecs_task_definition" "this" {
       logConfiguration = {
         logDriver = "awslogs"
         options = {
-          awslogs-group         = "/ecs/${var.project_name}"
+          awslogs-group         = aws_cloudwatch_log_group.ecs.name
           awslogs-region        = "us-east-1"
           awslogs-stream-prefix = "ecs"
         }
@@ -48,7 +58,7 @@ resource "aws_security_group" "ecs" {
     from_port       = 80
     to_port         = 80
     protocol        = "tcp"
-    security_groups = [var.alb_security_group.id]
+    security_groups = [var.alb_security_group_id]
   }
 
   egress {
