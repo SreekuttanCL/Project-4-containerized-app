@@ -1,4 +1,5 @@
 🚀 **Overview**
+
 This project demonstrates a production-style containerized application deployed on AWS ECS (Fargate) using Terraform and GitHub Actions.
 It follows real-world cloud engineering best practices:
 Infrastructure as Code (IaC)
@@ -9,6 +10,7 @@ Proper logging and observability
 This project is designed to reflect how containerized workloads are deployed in modern AWS environments.
 
 🏗️ **Architecture Overview**
+
 High-Level Flow
 Developer pushes code to GitHub
 GitHub Actions authenticates to AWS using OIDC (no access keys)
@@ -21,33 +23,36 @@ Logs are sent to CloudWatch Logs
 ☁️ **AWS Architecture Diagram**
 
 🧱 **Infrastructure Components**
-Networking
+
+**Networking**
 VPC
 Public Subnets (ALB)
 Private Subnets (ECS Tasks)
 Internet Gateway
 NAT Gateway
 Route Tables
-Compute
+**Compute**
 Amazon ECS (Fargate)
 ECS Cluster
 ECS Service
 ECS Task Definition
-Container Registry
+**Container Registry**
 Amazon ECR
-Load Balancing
+**Load Balancing**
 Application Load Balancer
 Target Group
 Listener (HTTP)
-Security
+**Security**
 IAM Roles (least privilege)
 GitHub OIDC Provider
 Security Groups
 No static credentials
-Observability
+**Observability**
 Amazon CloudWatch Log Group
 ECS Task Logs
-🔁 CI/CD Pipeline (GitHub Actions)
+
+🔁 **CI/CD Pipeline (GitHub Actions)**
+
 Trigger: push to main
 Authenticate using OIDC
 Build Docker image
@@ -55,12 +60,15 @@ Push image to Amazon ECR
 ECS Service pulls the latest image automatically
 ✔️ No AWS access keys stored in GitHub
 ✔️ Fully production-grade authentication model
-🛠️ Tech Stack
+
+🛠️ **Tech Stack**
+
 AWS: ECS, ECR, ALB, IAM, VPC, CloudWatch
 IaC: Terraform
 CI/CD: GitHub Actions
 Containers: Docker
 Runtime: AWS Fargate
+
 📁 **Project Structure**
 ```
 project-4-container-app/
@@ -77,6 +85,7 @@ project-4-container-app/
 ├── terraform.tfvars
 └── README.md
 ```
+
 ✅ **Key Learnings**
 Secure AWS authentication using GitHub OIDC
 ECS task execution roles and logging
