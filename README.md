@@ -1,4 +1,4 @@
-🚀 Overview
+🚀 **Overview**
 This project demonstrates a production-style containerized application deployed on AWS ECS (Fargate) using Terraform and GitHub Actions.
 It follows real-world cloud engineering best practices:
 Infrastructure as Code (IaC)
@@ -8,7 +8,7 @@ No hardcoded secrets
 Proper logging and observability
 This project is designed to reflect how containerized workloads are deployed in modern AWS environments.
 
-🏗️ Architecture Overview
+🏗️ **Architecture Overview**
 High-Level Flow
 Developer pushes code to GitHub
 GitHub Actions authenticates to AWS using OIDC (no access keys)
@@ -18,9 +18,9 @@ Application runs on ECS Fargate inside private subnets
 Traffic flows through an Application Load Balancer
 Logs are sent to CloudWatch Logs
 
-☁️ AWS Architecture Diagram
+☁️ **AWS Architecture Diagram**
 
-🧱 Infrastructure Components
+🧱 **Infrastructure Components**
 Networking
 VPC
 Public Subnets (ALB)
@@ -61,7 +61,7 @@ IaC: Terraform
 CI/CD: GitHub Actions
 Containers: Docker
 Runtime: AWS Fargate
-📁 Project Structure
+📁 **Project Structure**
 ```
 project-4-container-app/
 ├── .github/workflows/
@@ -77,7 +77,7 @@ project-4-container-app/
 ├── terraform.tfvars
 └── README.md
 ```
-✅ Key Learnings
+✅ **Key Learnings**
 Secure AWS authentication using GitHub OIDC
 ECS task execution roles and logging
 Debugging real ECS failures (logs, networking, IAM)
