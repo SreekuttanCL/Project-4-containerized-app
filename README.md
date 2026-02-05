@@ -1,4 +1,5 @@
 **Containerized App**
+
 [![Deploy](https://github.com/SreekuttanCL/cloud-portfolio-aws/actions/workflows/deploy.yml/badge.svg)](https://github.com/SreekuttanCL/cloud-portfolio-aws/actions/workflows/deploy.yml)
 [![Terraform](https://img.shields.io/badge/Terraform-v1.14.3-blue?logo=terraform&logoColor=white)](https://www.terraform.io/)
 
@@ -19,11 +20,17 @@ This project is designed to reflect how containerized workloads are deployed in 
 
 **High-Level Flow**
 Developer pushes code to GitHub
+
 GitHub Actions authenticates to AWS using OIDC (no access keys)
+
 Docker image is built and pushed to Amazon ECR
+
 ECS Service pulls the image from ECR
+
 Application runs on ECS Fargate inside private subnets
+
 Traffic flows through an Application Load Balancer
+
 Logs are sent to CloudWatch Logs
 
 ☁️ **AWS Architecture Diagram**
