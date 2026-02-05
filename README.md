@@ -62,7 +62,7 @@ CI/CD: GitHub Actions
 Containers: Docker
 Runtime: AWS Fargate
 📁 Project Structure
-'''
+```
 project-4-container-app/
 ├── .github/workflows/
 │ └── deploy.yml
@@ -76,7 +76,7 @@ project-4-container-app/
 ├── outputs.tf
 ├── terraform.tfvars
 └── README.md
-'''
+```
 ✅ Key Learnings
 Secure AWS authentication using GitHub OIDC
 ECS task execution roles and logging
