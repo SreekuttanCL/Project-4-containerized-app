@@ -64,9 +64,13 @@ ECS Service pulls the latest image automatically
 🛠️ **Tech Stack**
 
 AWS: ECS, ECR, ALB, IAM, VPC, CloudWatch
+
 IaC: Terraform
+
 CI/CD: GitHub Actions
+
 Containers: Docker
+
 Runtime: AWS Fargate
 
 📁 **Project Structure**
