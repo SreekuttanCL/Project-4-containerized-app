@@ -87,6 +87,7 @@ project-4-container-app/
 ```
 
 ✅ **Key Learnings**
+
 Secure AWS authentication using GitHub OIDC
 ECS task execution roles and logging
 Debugging real ECS failures (logs, networking, IAM)
